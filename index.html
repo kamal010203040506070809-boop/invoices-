@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f5f5b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="الفواتير">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="data:image/png;base64,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" type="image/png">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>صانع الفواتير</title>
+<style>
+  :root {
+    --ink: #1d2433;
+    --muted: #5d6676;
+    --rule: #c5cad4;
+    --paper: #ffffff;
+    --desk: #e9ecf1;
+    --accent: #1f5f5b;
+    --accent-dark: #174a47;
+    --focus: #e2a43b;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--desk);
+    color: var(--ink);
+    font-family: "Noto Naskh Arabic", "Segoe UI", Tahoma, "Geeza Pro", "Arial", sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  /* شريط الأدوات */
+  .toolbar {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 14px 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .toolbar .spacer { flex: 1; }
+  button, .toggle {
+    font: inherit;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 7px 14px;
+    cursor: pointer;
+  }
+  button:hover { border-color: var(--accent); }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.primary:hover { background: var(--accent-dark); }
+  button.confirming { background: #fff3e0; border-color: #c77a00; color: #7a4a00; }
+  .toggle { display: inline-flex; align-items: center; gap: 8px; user-select: none; }
+  .toggle input { width: 16px; height: 16px; accent-color: var(--accent); }
+
+  /* ورقة الفاتورة */
+  .sheet {
+    width: 210mm;
+    max-width: 100%;
+    min-height: 270mm;
+    margin: 12px auto 40px;
+    background: var(--paper);
+    padding: 16mm 14mm;
+    box-shadow: 0 1px 2px rgba(20, 30, 50, .12), 0 8px 28px rgba(20, 30, 50, .08);
+  }
+
+  input, textarea {
+    font: inherit;
+    color: inherit;
+    border: 0;
+    background: transparent;
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+  input::placeholder, textarea::placeholder { color: #aab0bc; }
+  input:focus-visible, textarea:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 1px;
+  }
+
+  .shop {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 4px;
+  }
+  .doc-title {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: .02em;
+    color: var(--muted);
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 3px double var(--ink);
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 22px;
+    margin-bottom: 18px;
+  }
+  .field {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    border-bottom: 1px solid var(--ink);
+    padding: 4px 0;
+  }
+  .field.wide { grid-column: 1 / -1; }
+  .field label { font-weight: 700; white-space: nowrap; }
+  .field input { flex: 1; min-width: 0; }
+  .field.client input { font-size: 19px; }
+
+  /* الجدول */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  th, td {
+    border: 1px solid var(--ink);
+    padding: 0;
+  }
+  th {
+    background: #eef0f4;
+    font-weight: 700;
+    padding: 8px;
+    text-align: center;
+  }
+  td input { text-align: right; padding: 9px 8px; }
+  td.qty input { text-align: center; }
+  td.price input { text-align: center; }
+  col.c-qty { width: 16%; }
+  col.c-price { width: 18%; }
+  col.c-act { width: 34px; }
+
+  .price-col { display: none; }
+  table.with-price .price-col { display: table-cell; }
+
+  th.act, td.act { border: 0; background: transparent; }
+  td.act { text-align: center; }
+  .del {
+    border: 0;
+    background: transparent;
+    color: #a3a9b5;
+    padding: 4px 6px;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .del:hover { color: #b3261e; border: 0; }
+
+  tfoot td {
+    background: #f6f7f9;
+    font-weight: 700;
+    padding: 9px 8px;
+    text-align: center;
+  }
+  tfoot td.label { text-align: left; }
+  tfoot td.blank { border: 0; background: transparent; }
+
+  .add-row { margin-top: 10px; }
+
+  .notes { margin-top: 20px; }
+  .notes label { font-weight: 700; display: block; margin-bottom: 2px; }
+  .notes textarea {
+    border: 1px solid var(--rule);
+    min-height: 70px;
+    resize: vertical;
+  }
+
+  [hidden] { display: none !important; }
+
+  .tabs {
+    display: flex;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .tabs button { border: 0; border-radius: 0; }
+  .tabs button.on { background: var(--ink); color: #fff; }
+  .status { font-size: 14px; color: var(--accent); }
+  .status.warn { color: #9a5b00; }
+
+  .hint { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .filter { margin-bottom: 10px; }
+  .filter input {
+    border: 1px solid var(--rule);
+    background: #fff;
+    max-width: 320px;
+  }
+  table.sum-table { table-layout: auto; }
+  .sum-table td { padding: 8px; text-align: right; }
+  .sum-table td.num { text-align: center; }
+  .sum-table th.w-num, .sum-table td.num { width: 18%; }
+  .sum-table td.empty { text-align: center; color: var(--muted); padding: 18px 8px; }
+  .section-title { font-size: 18px; font-weight: 700; margin: 28px 0 8px; }
+  .small-btn { padding: 3px 10px; font-size: 14px; margin-inline-start: 4px; }
+  .actions-cell { white-space: nowrap; text-align: center !important; width: 1%; }
+  .backup { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .backup input[type=file] { display: none; }
+
+  @media print {
+    .no-print { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .sheet { padding: 12px 8px; min-height: 0; }
+    .meta { grid-template-columns: 1fr; }
+    col.c-qty { width: 22%; }
+    col.c-price { width: 24%; }
+  }
+
+  /* الطباعة */
+  @page { size: A4; margin: 10mm; }
+  @media print {
+    body { background: #fff; font-size: 16px; }
+    .toolbar, .add-row, .act, .notes.empty { display: none !important; }
+    .sheet { box-shadow: none; margin: 0; padding: 0; width: auto; min-height: 0; }
+    input::placeholder, textarea::placeholder { color: transparent; }
+    .notes textarea { border: 0; padding: 0; }
+    th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    tr { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="tabs" role="group" aria-label="العرض">
+    <button type="button" id="tabInvoice" class="on">الفاتورة</button>
+    <button type="button" id="tabSummary">ملخص النقشات</button>
+  </div>
+  <button type="button" class="primary inv-only" id="saveBtn">حفظ الفاتورة</button>
+  <button type="button" class="inv-only" id="newBtn">فاتورة جديدة</button>
+  <button type="button" id="printBtn">طباعة / حفظ PDF</button>
+  <button type="button" id="installBtn" hidden>تثبيت التطبيق</button>
+  <span class="status" id="status" role="status"></span>
+  <span class="spacer"></span>
+  <label class="toggle inv-only"><input type="checkbox" id="priceToggle"> إضافة عمود السعر (اختياري)</label>
+</div>
+
+<main class="sheet" id="sheet">
+  <input class="shop" id="shop" type="text" placeholder="اسم المنشأة (اختياري)" aria-label="اسم المنشأة">
+  <p class="doc-title">فاتورة</p>
+
+  <section class="meta">
+    <div class="field client wide">
+      <label for="client">اسم العميل:</label>
+      <input id="client" type="text" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="invNo">رقم الفاتورة:</label>
+      <input id="invNo" type="text" inputmode="numeric" value="1" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="invDate">التاريخ:</label>
+      <input id="invDate" type="date">
+    </div>
+  </section>
+
+  <table id="tbl">
+    <colgroup>
+      <col class="c-qty"><col><col><col class="c-price price-col"><col class="c-act">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>العدد</th>
+        <th>اسم النقشة</th>
+        <th>نوع النقشة</th>
+        <th class="price-col">السعر</th>
+        <th class="act"></th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+    <tfoot>
+      <tr>
+        <td id="totalQty">0</td>
+        <td colspan="2" class="label">إجمالي العدد</td>
+        <td class="price-col" id="totalPrice">0</td>
+        <td class="blank act"></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <button class="add-row" id="addBtn">+ إضافة سطر</button>
+
+  <section class="notes" id="notesBox">
+    <label for="notes">ملاحظات</label>
+    <textarea id="notes"></textarea>
+  </section>
+</main>
+
+<main class="sheet" id="summaryView" hidden>
+  <p class="doc-title" style="margin-top:0">ملخص النقشات</p>
+  <p class="hint" id="sumHint"></p>
+
+  <div class="filter no-print">
+    <input id="filter" type="text" placeholder="بحث باسم النقشة" autocomplete="off" aria-label="بحث باسم النقشة">
+  </div>
+
+  <table class="sum-table">
+    <thead>
+      <tr>
+        <th>اسم النقشة</th>
+        <th class="w-num">إجمالي العدد</th>
+        <th class="w-num">عدد الفواتير</th>
+      </tr>
+    </thead>
+    <tbody id="sumBody"></tbody>
+    <tfoot>
+      <tr>
+        <td class="label" style="text-align:left">الإجمالي</td>
+        <td id="sumTotalQty">0</td>
+        <td id="sumTotalInv">0</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="no-print">
+    <p class="section-title">الفواتير المحفوظة</p>
+    <table class="sum-table">
+      <thead>
+        <tr>
+          <th class="w-num">رقم الفاتورة</th>
+          <th>العميل</th>
+          <th class="w-num">التاريخ</th>
+          <th class="w-num">العدد</th>
+          <th class="actions-cell"></th>
+        </tr>
+      </thead>
+      <tbody id="savedBody"></tbody>
+    </table>
+
+    <p class="section-title">نسخة احتياطية</p>
+    <div class="backup">
+      <button type="button" id="exportBtn">تصدير الفواتير (ملف)</button>
+      <label class="toggle" for="importFile" style="cursor:pointer">استيراد من ملف</label>
+      <input type="file" id="importFile" accept=".json,application/json">
+    </div>
+  </div>
+</main>
+
+<datalist id="namesList"></datalist>
+<datalist id="typesList"></datalist>
+
+<script>
+(function () {
+  var rows = document.getElementById('rows');
+  var tbl = document.getElementById('tbl');
+  var START_ROWS = 10;
+
+  // تحويل الأرقام العربية إلى إنجليزية للحساب
+  function toNum(v) {
+    if (!v) return 0;
+    var map = { '٠':0,'١':1,'٢':2,'٣':3,'٤':4,'٥':5,'٦':6,'٧':7,'٨':8,'٩':9 };
+    var s = String(v).replace(/[٠-٩]/g, function (d) { return map[d]; })
+                     .replace(/[٫,]/g, '.').replace(/[^\d.\-]/g, '');
+    var n = parseFloat(s);
+    return isNaN(n) ? 0 : n;
+  }
+  function fmt(n) {
+    return (Math.round(n * 100) / 100).toLocaleString('en-US');
+  }
+
+  function makeCell(cls, placeholder, listId, inputmode) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    var inp = document.createElement('input');
+    inp.type = 'text';
+    inp.autocomplete = 'off';
+    if (listId) inp.setAttribute('list', listId);
+    if (inputmode) inp.inputMode = inputmode;
+    td.appendChild(inp);
+    return td;
+  }
+
+  function addRow() {
+    var tr = document.createElement('tr');
+    var qty = makeCell('qty', '', null, 'decimal');
+    var name = makeCell('name', '', 'namesList');
+    var type = makeCell('type', '', 'typesList');
+    var price = makeCell('price price-col', '', null, 'decimal');
+    var act = document.createElement('td');
+    act.className = 'act';
+    var del = document.createElement('button');
+    del.className = 'del';
+    del.type = 'button';
+    del.textContent = '×';
+    del.title = 'حذف السطر';
+    del.setAttribute('aria-label', 'حذف السطر');
+    del.addEventListener('click', function () {
+      tr.remove();
+      if (!rows.children.length) addRow();
+      refresh();
+    });
+    act.appendChild(del);
+    tr.append(qty, name, type, price, act);
+    rows.appendChild(tr);
+    return tr;
+  }
+
+  function refresh() {
+    var q = 0, p = 0;
+    var names = {}, types = {};
+    Array.prototype.forEach.call(rows.children, function (tr) {
+      q += toNum(tr.querySelector('.qty input').value);
+      p += toNum(tr.querySelector('.price input').value);
+      var n = tr.querySelector('.name input').value.trim();
+      var t = tr.querySelector('.type input').value.trim();
+      if (n) names[n] = 1;
+      if (t) types[t] = 1;
+    });
+    document.getElementById('totalQty').textContent = fmt(q);
+    document.getElementById('totalPrice').textContent = fmt(p);
+    fillList('namesList', names);
+    fillList('typesList', types);
+  }
+  function fillList(id, obj) {
+    var dl = document.getElementById(id);
+    dl.innerHTML = '';
+    Object.keys(obj).forEach(function (k) {
+      var o = document.createElement('option');
+      o.value = k;
+      dl.appendChild(o);
+    });
+  }
+
+  rows.addEventListener('input', refresh);
+
+  // Enter ينتقل إلى الحقل التالي، وفي آخر حقل يضيف سطراً جديداً
+  rows.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    var inputs = Array.prototype.filter.call(
+      rows.querySelectorAll('input'),
+      function (i) { return i.offsetParent !== null; }
+    );
+    var idx = inputs.indexOf(e.target);
+    if (idx === inputs.length - 1) {
+      var tr = addRow();
+      tr.querySelector('input').focus();
+    } else if (idx > -1) {
+      inputs[idx + 1].focus();
+    }
+  });
+
+  document.getElementById('addBtn').addEventListener('click', function () {
+    addRow().querySelector('input').focus();
+  });
+
+  document.getElementById('priceToggle').addEventListener('change', function (e) {
+    tbl.classList.toggle('with-price', e.target.checked);
+  });
+
+  document.getElementById('printBtn').addEventListener('click', function () {
+    document.getElementById('notesBox').classList.toggle(
+      'empty', !document.getElementById('notes').value.trim()
+    );
+    window.print();
+  });
+
+  // فاتورة جديدة (بضغطتين لتفادي المسح بالخطأ)
+  var newBtn = document.getElementById('newBtn');
+  var armed = null;
+  newBtn.addEventListener('click', function () {
+    if (!armed) {
+      newBtn.textContent = 'اضغط مرة أخرى للتأكيد';
+      newBtn.classList.add('confirming');
+      armed = setTimeout(disarm, 3500);
+      return;
+    }
+    disarm();
+    var noEl = document.getElementById('invNo');
+    var cur = noEl.value.trim();
+    var next = /^[\d٠-٩]+$/.test(cur) ? String(toNum(cur) + 1) : '';
+    noEl.value = next;
+    document.getElementById('client').value = '';
+    document.getElementById('notes').value = '';
+    currentId = null;
+    rows.innerHTML = '';
+    for (var i = 0; i < START_ROWS; i++) addRow();
+    setToday();
+    refresh();
+    document.getElementById('client').focus();
+  });
+  function disarm() {
+    clearTimeout(armed);
+    armed = null;
+    newBtn.textContent = 'فاتورة جديدة';
+    newBtn.classList.remove('confirming');
+  }
+
+  function setToday() {
+    var d = new Date();
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var day = String(d.getDate()).padStart(2, '0');
+    document.getElementById('invDate').value = d.getFullYear() + '-' + m + '-' + day;
+  }
+
+  // ===== الحفظ وملخص النقشات =====
+  var KEY = 'invoice-maker-v1';
+  var canStore = true;
+  var memory = [];
+  var currentId = null;
+  var statusEl = document.getElementById('status');
+  var statusTimer = null;
+  var sheet = document.getElementById('sheet');
+  var summaryView = document.getElementById('summaryView');
+
+  function loadAll() {
+    try {
+      var s = window.localStorage.getItem(KEY);
+      var data = s ? JSON.parse(s) : [];
+      return Array.isArray(data) ? data : [];
+    } catch (e) {
+      canStore = false;
+      return memory;
+    }
+  }
+  var invoices = loadAll();
+
+  function saveAll() {
+    memory = invoices;
+    try { window.localStorage.setItem(KEY, JSON.stringify(invoices)); }
+    catch (e) { canStore = false; }
+  }
+
+  function status(msg, warn) {
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('warn', !!warn);
+    clearTimeout(statusTimer);
+    statusTimer = setTimeout(function () { statusEl.textContent = ''; }, 4000);
+  }
+
+  function val(id) { return document.getElementById(id).value; }
+
+  function collect() {
+    var list = [];
+    Array.prototype.forEach.call(rows.children, function (tr) {
+      var r = {
+        q: tr.querySelector('.qty input').value.trim(),
+        n: tr.querySelector('.name input').value.trim(),
+        t: tr.querySelector('.type input').value.trim(),
+        p: tr.querySelector('.price input').value.trim()
+      };
+      if (r.q || r.n || r.t || r.p) list.push(r);
+    });
+    return {
+      id: currentId || ('i' + Date.now().toString(36)),
+      shop: val('shop'),
+      no: val('invNo').trim(),
+      client: val('client').trim(),
+      date: val('invDate'),
+      notes: val('notes'),
+      withPrice: document.getElementById('priceToggle').checked,
+      rows: list
+    };
+  }
+
+  function fillRows(list) {
+    rows.innerHTML = '';
+    list.forEach(function (r) {
+      var tr = addRow();
+      tr.querySelector('.qty input').value = r.q || '';
+      tr.querySelector('.name input').value = r.n || '';
+      tr.querySelector('.type input').value = r.t || '';
+      tr.querySelector('.price input').value = r.p || '';
+    });
+    while (rows.children.length < START_ROWS) addRow();
+    refresh();
+  }
+
+  function indexOfId(id) {
+    for (var i = 0; i < invoices.length; i++) if (invoices[i].id === id) return i;
+    return -1;
+  }
+
+  function saveInvoice() {
+    var inv = collect();
+    if (!inv.rows.some(function (r) { return r.n || r.q; })) {
+      status('أضف نقشة واحدة على الأقل قبل الحفظ', true);
+      return;
+    }
+    var i = indexOfId(inv.id);
+    if (i > -1) invoices[i] = inv; else invoices.push(inv);
+    currentId = inv.id;
+    saveAll();
+    status('تم حفظ الفاتورة' + (inv.no ? ' رقم ' + inv.no : ''));
+  }
+
+  function openInvoice(id) {
+    var i = indexOfId(id);
+    if (i < 0) return;
+    var inv = invoices[i];
+    currentId = inv.id;
+    document.getElementById('shop').value = inv.shop || '';
+    document.getElementById('invNo').value = inv.no || '';
+    document.getElementById('client').value = inv.client || '';
+    document.getElementById('invDate').value = inv.date || '';
+    document.getElementById('notes').value = inv.notes || '';
+    var pt = document.getElementById('priceToggle');
+    pt.checked = !!inv.withPrice;
+    tbl.classList.toggle('with-price', pt.checked);
+    fillRows(inv.rows || []);
+    showView('invoice');
+  }
+
+  function norm(s) { return String(s || '').replace(/\s+/g, ' ').trim(); }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  // زر بخطوتين للحذف
+  function confirmButton(label, action) {
+    var b = el('button', 'small-btn', label);
+    b.type = 'button';
+    var t = null;
+    b.addEventListener('click', function () {
+      if (!t) {
+        b.textContent = 'تأكيد؟';
+        b.classList.add('confirming');
+        t = setTimeout(function () {
+          t = null; b.textContent = label; b.classList.remove('confirming');
+        }, 3000);
+        return;
+      }
+      clearTimeout(t);
+      action();
+    });
+    return b;
+  }
+
+  function renderSummary() {
+    var q = norm(document.getElementById('filter').value).toLowerCase();
+    var map = {};
+    invoices.forEach(function (inv) {
+      (inv.rows || []).forEach(function (r) {
+        var name = norm(r.n) || '(بدون اسم)';
+        var key = name.toLowerCase();
+        if (!map[key]) map[key] = { name: name, qty: 0, inv: {} };
+        map[key].qty += toNum(r.q);
+        map[key].inv[inv.id] = 1;
+      });
+    });
+    var arr = Object.keys(map).map(function (k) { return map[k]; })
+      .filter(function (g) { return !q || g.name.toLowerCase().indexOf(q) > -1; })
+      .sort(function (a, b) { return b.qty - a.qty; });
+
+    var body = document.getElementById('sumBody');
+    body.innerHTML = '';
+    var total = 0, seen = {};
+    if (!arr.length) {
+      var tr0 = el('tr');
+      var td0 = el('td', 'empty', invoices.length
+        ? 'لا توجد نقشة بهذا الاسم.'
+        : 'لا توجد فواتير محفوظة بعد. احفظ فاتورة من تبويب «الفاتورة».');
+      td0.colSpan = 3;
+      tr0.appendChild(td0);
+      body.appendChild(tr0);
+    }
+    arr.forEach(function (g) {
+      var tr = el('tr');
+      tr.appendChild(el('td', '', g.name));
+      tr.appendChild(el('td', 'num', fmt(g.qty)));
+      tr.appendChild(el('td', 'num', String(Object.keys(g.inv).length)));
+      body.appendChild(tr);
+      total += g.qty;
+      Object.keys(g.inv).forEach(function (id) { seen[id] = 1; });
+    });
+    document.getElementById('sumTotalQty').textContent = fmt(total);
+    document.getElementById('sumTotalInv').textContent = String(Object.keys(seen).length);
+
+    var hint = 'يشمل ' + invoices.length + ' فاتورة محفوظة. الفواتير غير المحفوظة لا تدخل في الحساب.';
+    if (!canStore) hint += ' التخزين غير متاح في هذا العرض، لذا تبقى البيانات حتى إغلاق الصفحة فقط. افتح الملف في المتصفح مباشرة، أو استخدم النسخة الاحتياطية.';
+    document.getElementById('sumHint').textContent = hint;
+
+    // قائمة الفواتير المحفوظة
+    var sb = document.getElementById('savedBody');
+    sb.innerHTML = '';
+    if (!invoices.length) {
+      var tr1 = el('tr');
+      var td1 = el('td', 'empty', 'لا توجد فواتير محفوظة.');
+      td1.colSpan = 5;
+      tr1.appendChild(td1);
+      sb.appendChild(tr1);
+    }
+    invoices.slice().reverse().forEach(function (inv) {
+      var sum = 0;
+      (inv.rows || []).forEach(function (r) { sum += toNum(r.q); });
+      var tr = el('tr');
+      tr.appendChild(el('td', 'num', inv.no || '-'));
+      tr.appendChild(el('td', '', inv.client || '-'));
+      tr.appendChild(el('td', 'num', inv.date || '-'));
+      tr.appendChild(el('td', 'num', fmt(sum)));
+      var act = el('td', 'actions-cell');
+      var open = el('button', 'small-btn', 'فتح');
+      open.type = 'button';
+      open.addEventListener('click', function () { openInvoice(inv.id); });
+      act.appendChild(open);
+      act.appendChild(confirmButton('حذف', function () {
+        var i = indexOfId(inv.id);
+        if (i > -1) invoices.splice(i, 1);
+        if (currentId === inv.id) currentId = null;
+        saveAll();
+        renderSummary();
+      }));
+      tr.appendChild(act);
+      sb.appendChild(tr);
+    });
+  }
+
+  function showView(v) {
+    var s = v === 'summary';
+    sheet.hidden = s;
+    summaryView.hidden = !s;
+    document.getElementById('tabInvoice').classList.toggle('on', !s);
+    document.getElementById('tabSummary').classList.toggle('on', s);
+    Array.prototype.forEach.call(document.querySelectorAll('.inv-only'), function (e) {
+      e.hidden = s;
+    });
+    if (s) renderSummary();
+  }
+
+  document.getElementById('saveBtn').addEventListener('click', saveInvoice);
+  document.getElementById('tabInvoice').addEventListener('click', function () { showView('invoice'); });
+  document.getElementById('tabSummary').addEventListener('click', function () { showView('summary'); });
+  document.getElementById('filter').addEventListener('input', renderSummary);
+
+  document.getElementById('exportBtn').addEventListener('click', function () {
+    var blob = new Blob([JSON.stringify(invoices)], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'invoices-backup.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  document.getElementById('importFile').addEventListener('change', function (e) {
+    var f = e.target.files[0];
+    if (!f) return;
+    var rd = new FileReader();
+    rd.onload = function () {
+      try {
+        var data = JSON.parse(rd.result);
+        if (!Array.isArray(data)) throw new Error('bad');
+        var added = 0;
+        data.forEach(function (inv) {
+          if (!inv || !Array.isArray(inv.rows)) return;
+          if (!inv.id) inv.id = 'i' + Date.now().toString(36) + added;
+          var i = indexOfId(inv.id);
+          if (i > -1) invoices[i] = inv; else invoices.push(inv);
+          added++;
+        });
+        saveAll();
+        renderSummary();
+        status('تم استيراد ' + added + ' فاتورة');
+      } catch (err) {
+        status('الملف غير صالح', true);
+      }
+      e.target.value = '';
+    };
+    rd.readAsText(f);
+  });
+
+  for (var i = 0; i < START_ROWS; i++) addRow();
+  setToday();
+  refresh();
+})();
+
+// ===== التثبيت والعمل بدون إنترنت =====
+(function () {
+  var deferred = null;
+  var btn = document.getElementById('installBtn');
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferred = e;
+    btn.hidden = false;
+  });
+  btn.addEventListener('click', function () {
+    if (!deferred) return;
+    deferred.prompt();
+    deferred.userChoice.then(function () { deferred = null; btn.hidden = true; });
+  });
+  window.addEventListener('appinstalled', function () { btn.hidden = true; });
+
+  try {
+    if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    }
+    // يطلب من المتصفح عدم حذف الفواتير المحفوظة عند امتلاء المساحة
+    if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
